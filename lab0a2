@@ -31,7 +31,7 @@ int main()
         {    
             
             int m = l + (r - l) / 2; 
-            if (arr[m] == k) 
+            if (a[m] == k) 
             {
                 flag=1;
                 break;
@@ -39,7 +39,7 @@ int main()
                  
   
         // If x greater, ignore left half 
-           if (arr[m] < k) 
+           if (a[m] < k) 
                l = m + 1; 
   
         // If x is smaller, ignore right half 
