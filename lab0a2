@@ -3,17 +3,17 @@
 using namespace std;
 int main()
 {
-	 std::fstream myfile("/home/bmsce/Documents/ADA146/algorithm/input.txt", std::ios_base::in);
-	int n,i,j,a[100],k,t,flag=-1;
+    cout<<"Hello";
+    std::fstream myfile("C:\Users\MJ\Documents\ADA 2019\lab0a2\input.txt", std::ios_base::in);
+	int n,i,j,a[100],k,t,flag=0;
+    int l,r;
 	
 	cout<<"Enter the number of testcases "<<endl;
 	myfile>>t;
 	
-	
-	cout<<"Enter the number of array elements and the number to be found "<<endl;
-	
-	for(i=0;i<t;i++)
+	while(t--)
 	{
+        cout<<"Enter the number of array elements and the number to be found "<<endl;
 		myfile>>n;
 	    myfile>>k;
 		
@@ -21,15 +21,37 @@ int main()
 		for(j=0;j<n;j++)
 		{
 			myfile>>a[j];
-			if(a[j] == k)
-				flag=1;
 		}
-		
+        
+	l=0;
+        r=n-1;
+        flag=0;
+        
+        while (l <= r) 
+        {    
+            
+            int m = l + (r - l) / 2; 
+            if (arr[m] == k) 
+            {
+                flag=1;
+                break;
+            }
+                 
+  
+        // If x greater, ignore left half 
+           if (arr[m] < k) 
+               l = m + 1; 
+  
+        // If x is smaller, ignore right half 
+           else
+               r = m - 1; 
+    } //end of while 1
+  
 		if(flag==1)
-			cout<<"Element found!!!"<<endl;
+			cout<<"1"<<endl;
 		else
-			cout<<"Not found";
+			cout<<"-1";
+	}//end of while 2
 	
-	}
-	
+    return 0;
 }
